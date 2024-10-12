@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thanh Nam Trinh - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
+        <h1><span class="animated-title">Thanh Nam Trinh</span></h1>
         <nav>
             <ul>
                 <li><a href="#about">About Me</a></li>
@@ -20,13 +23,13 @@
 
     <main>
         <section id="about">
-            <h2>About Me</h2>
-            <p>Hi! My name is <div Thanh="" Nam="" Trinh=""></div>. I am a college student passionate about video game, especially in C# and web development. I love programming and I want to create my first game by myself. .</p>
-            <p>Outside of coding, I enjoy playing video game, exploring new technologies, and learning new skills to enhance my technical abilities.</p>
+            <h2><span class="animated-subtitle">About Me</span></h2>
+            <p>Hi! My name is Nam. I am a college student passionate about video games, especially in C# and web development. I love programming and want to create my first game by myself.</p>
+            <p>Outside of coding, I enjoy playing video games, exploring new technologies, and learning new skills to enhance my technical abilities.</p>
         </section>
 
         <section id="skills">
-            <h2>My Skills</h2>
+            <h2><span class="animated-subtitle">My Skills</span></h2>
             <ul>
                 <li>Web Development (HTML, CSS, JavaScript)</li>
                 <li>C# Programming</li>
@@ -36,7 +39,7 @@
         </section>
 
         <section id="experience">
-            <h2>Experience</h2>
+            <h2><span class="animated-subtitle">Experience</span></h2>
             <table>
                 <thead>
                     <tr>
@@ -48,12 +51,12 @@
                 <tbody>
                     <tr>
                         <td>Web Design Student</td>
-                        <td>MCTC college</td>
-                        <td>January 2024 -  May 2024</td>
+                        <td>MCTC College</td>
+                        <td>January 2024 - May 2024</td>
                     </tr>
                     <tr>
-                        <td>C# student</td>
-                        <td>MCTC college</td>
+                        <td>C# Student</td>
+                        <td>MCTC College</td>
                         <td>August 2024 - Present</td>
                     </tr>
                 </tbody>
@@ -68,5 +71,31 @@
             <li><a href="https://linkedin.com/in/yourprofile">LinkedIn</a></li>
         </ul>
     </footer>
+
+    <script>
+        // Add a simple animation effect to the header
+        document.addEventListener("DOMContentLoaded", function() {
+            const header = document.querySelector("header");
+            header.style.transition = "transform 1s ease-in-out";
+            header.style.transform = "scale(1.1)";
+            setTimeout(() => {
+                header.style.transform = "scale(1)";
+            }, 1000);
+        });
+
+        // Smooth scrolling for navigation links
+        const navLinks = document.querySelectorAll("nav ul li a");
+        navLinks.forEach(link => {
+            link.addEventListener("click", function(event) {
+                event.preventDefault();
+                const targetId = this.getAttribute("href").substring(1);
+                const targetElement = document.getElementById(targetId);
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
 </body>
 </html>
